@@ -15,8 +15,11 @@ all:: $(NPM_)
 $(NPM_DIR):
 	mkdir -p $@
 
+$(NPM_DIR)/.gitignore:
+	echo 'node_modules' > $@
+
 $(NPM_DIR)/package.json:
 	echo '{"private": true}' > $@
 
-$(NPM_): $(NPM_DIR) $(NPM_DIR)/package.json
+$(NPM_): $(NPM_DIR) $(NPM_DIR)/.gitignore $(NPM_DIR)/package.json
 	(cd $< && $(NPM) install)
