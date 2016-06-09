@@ -17,8 +17,8 @@ NODE ?= $(NODENAME)@$(HOSTNAME)
 
 QCU_ERL ?= erl -smp
 
-QCU_CONFIG_OPT ?= $(if $(wildcard, $(QCU_CONFIG)),-config $(QCU_CONFIG),)
-QCU_LAUNCH_OPT ?= $(if $(wildcard, $(PROJECT_MOD)),-s $(PROJECT),)
+QCU_CONFIG_OPT ?= $(if $(QCU_CONFIG),-config $(QCU_CONFIG),)
+QCU_LAUNCH_OPT ?= $(if $(wildcard src/$(PROJECT_MOD).erl),-s $(PROJECT),)
 
 QCU_SHELL_ERL ?= $(QCU_ERL)
 QCU_SHELL_PATHS ?= $(CURDIR)/ebin $(APPS_DIR)/*/ebin $(DEPS_DIR)/*/ebin
