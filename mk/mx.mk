@@ -5,8 +5,7 @@
 MX_DIR  ?= lib/mx
 MX_     := $(MX_DIR)/mx.m4
 MX_REPO ?= https://github.com/jflatow/mx.git
-MX_VARS := $(patsubst mx_%,%,$(filter mx_%,$(.VARIABLES)))
-MX	 = m4 -P $(foreach V,$(MX_VARS),-D$V='$(mx_$V)') $(MX_)
+MX	 = m4 -P $(foreach V,$(MX_VARS),-D$V='$($V)') $(MX_)
 
 # Core targets
 

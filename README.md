@@ -17,7 +17,7 @@ QCU_START_EXTRA
 
 MX      (execute only)
 MX_     (read only)
-MX_VARS (read only)
+MX_VARS
 MX_DIR
 MX_REPO
 
