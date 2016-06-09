@@ -14,7 +14,9 @@ QCU_START_EXTRA
 
 ## mx
 
+
 MX      (execute only)
+MX_     (read only)
 MX_VARS (read only)
 MX_DIR
 MX_REPO
@@ -22,4 +24,4 @@ MX_REPO
 ## npm
 
 NPM
-NPM_MOD
+NPM_

@@ -2,18 +2,18 @@
 
 # Config
 
-NPM ?= npm
+NPM     ?= npm
 NPM_DIR ?= lib/node
-NPM_MOD ?= $(NPM_DIR)/node_modules
+NPM_    := $(NPM_DIR)/node_modules
 
 # Core targets
 
-all:: $(NPM_MOD)
+all:: $(NPM_)
 
 # Sync targets
 
 $(NPM_DIR):
 	mkdir -p $@
 
-$(NPM_MOD): $(NPM_DIR) $(NPM_DIR)/package.json
+$(NPM_): $(NPM_DIR) $(NPM_DIR)/package.json
 	(cd $< && $(NPM) install)
